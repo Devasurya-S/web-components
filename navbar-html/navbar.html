@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Navbar</title>
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                    navBg: '#f8f1e7',
+                    contactBtnBg: '#ea9600',
+                    bodyBg: '#281a0f',
+                  }
+                }
+              }
+            }
+          </script>
+
+    </head>
+    <body class="min-h-screen p-8 bg-bodyBg">
+        <div class="flex justify-between p-4 bg-navBg rounded-full">
+            <div class="flex items-center">
+                <a class="mr-3">
+                    <img src="assets/logo.svg" class="w-10"/>
+                </a>
+
+                <a class="text-2xl font-semibold">logo</a>
+
+                <ul class="flex ml-16">
+                    <li class="mr-5">Home</li>
+                    <li class="mr-5">Product</li>
+                    <li class="mr-5">About Us</li>
+                    <li class="">Blog</li>
+                </ul>
+            </div>
+
+            <div class="flex">
+                <button class="border border-black rounded-full px-6 py-2 text-regular mr-4">Extra Button</button>
+                <button class="bg-contactBtnBg rounded-full px-6 py-2 text-regular">Contact Us</button>
+            </div>
+
+            <!-- Mobile Navigation -->
+
+            <img src="assets/hamburger-menu.svg" class="hidden w-10"/>
+
+            <div class="hidden">
+                <ul class="flex flex-col ml-16">
+                    <li class="mr-5">Home</li>
+                    <li class="mr-5">Product</li>
+                    <li class="mr-5">About Us</li>
+                    <li class="">Blog</li>
+                </ul>
+            </div>
+
+        </div>
+    </body>
+</html>
