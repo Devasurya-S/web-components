@@ -22,6 +22,7 @@
     </head>
     <body class="min-h-screen p-8 bg-bodyBg">
         <div class="flex justify-between p-4 bg-navBg rounded-full">
+            
             <div class="flex items-center">
                 <a class="mr-3">
                     <img src="assets/logo.svg" class="w-10"/>
@@ -29,7 +30,7 @@
 
                 <a class="text-2xl font-semibold">logo</a>
 
-                <ul class="flex ml-16">
+                <ul class="hidden sm:flex ml-16">
                     <li class="mr-5">Home</li>
                     <li class="mr-5">Product</li>
                     <li class="mr-5">About Us</li>
@@ -37,16 +38,16 @@
                 </ul>
             </div>
 
-            <div class="flex">
-                <button class="border border-black rounded-full px-6 py-2 text-regular mr-4">Extra Button</button>
-                <button class="bg-contactBtnBg rounded-full px-6 py-2 text-regular">Contact Us</button>
-            </div>
+                <div class="hidden sm:flex">
+                    <button class="border border-black rounded-full px-6 py-2 text-regular mr-4">Extra Button</button>
+                    <button class="bg-contactBtnBg rounded-full px-6 py-2 text-regular">Contact Us</button>
+                </div>
 
-            <!-- Mobile Navigation -->
+                <!-- Mobile Navigation -->
 
-            <img src="assets/hamburger-menu.svg" class="hidden w-10"/>
-
-            <div class="hidden">
+                <img id="hamburger-icon" src="assets/hamburger-menu.svg" class="sm:hidden w-10"/>
+         
+            <div id="mobile-nav" class="hidden">
                 <ul class="flex flex-col ml-16">
                     <li class="mr-5">Home</li>
                     <li class="mr-5">Product</li>
@@ -54,7 +55,17 @@
                     <li class="">Blog</li>
                 </ul>
             </div>
-
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              const hamburgerIcon = document.getElementById('hamburger-icon');
+              const mobileNav = document.getElementById('mobile-nav');
+      
+              hamburgerIcon.addEventListener('click', function () {
+                mobileNav.classList.toggle('hidden');
+              });
+            });
+        </script>
     </body>
 </html>
