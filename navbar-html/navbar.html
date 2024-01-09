@@ -21,6 +21,7 @@
 
     </head>
     <body class="min-h-screen p-8 bg-bodyBg">
+
         <div class="flex justify-between p-4 bg-navBg rounded-full">
             
             <div class="flex items-center">
@@ -43,19 +44,20 @@
                     <button class="bg-contactBtnBg rounded-full px-6 py-2 text-regular">Contact Us</button>
                 </div>
 
-                <!-- Mobile Navigation -->
-
                 <img id="hamburger-icon" src="assets/hamburger-menu.svg" class="sm:hidden w-10"/>
          
-            <div id="mobile-nav" class="hidden">
-                <ul class="flex flex-col ml-16">
-                    <li class="mr-5">Home</li>
-                    <li class="mr-5">Product</li>
-                    <li class="mr-5">About Us</li>
-                    <li class="">Blog</li>
-                </ul>
-            </div>
         </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-nav" class="absolute inset-0 mt-28 flex flex-col backdrop-blur-md">
+          <ul class="text-center py-10">
+              <li class="p-4 mx-auto w-40 mb-4 border-2 bg-navBg rounded-full text-bold">Home</li>
+              <li class="p-4 mx-auto w-40 mb-4 border-2 border-bg-navBg text-white rounded-full text-bold">Product</li>
+              <li class="p-4 mx-auto w-40 mb-4 border-2 border-bg-navBg text-white  rounded-full text-bold">About Us</li>
+              <li class="p-4 mx-auto w-40 border-2 border-bg-navBg text-white  rounded-full text-bold">Blog</li>
+          </ul>
+        </div>
+
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
