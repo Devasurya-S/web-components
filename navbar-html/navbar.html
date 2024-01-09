@@ -49,7 +49,7 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div id="mobile-nav" class="absolute inset-0 mt-28 flex flex-col backdrop-blur-md">
+        <div id="mobile-nav" class="hidden absolute inset-0 mt-28 flex flex-col backdrop-blur-md">
           <ul class="text-center py-10">
               <li class="p-4 mx-auto w-40 mb-4 border-2 bg-navBg rounded-full text-bold">Home</li>
               <li class="p-4 mx-auto w-40 mb-4 border-2 border-bg-navBg text-white rounded-full text-bold">Product</li>
@@ -58,16 +58,25 @@
           </ul>
         </div>
 
-
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
+          document.addEventListener('DOMContentLoaded', function () {
               const hamburgerIcon = document.getElementById('hamburger-icon');
               const mobileNav = document.getElementById('mobile-nav');
       
               hamburgerIcon.addEventListener('click', function () {
-                mobileNav.classList.toggle('hidden');
+                  mobileNav.classList.toggle('hidden');
+      
+                  // Get the current src attribute value
+                  const currentSrc = hamburgerIcon.getAttribute('src');
+      
+                  // Define the new src attribute value based on the visibility of mobile navigation
+                  const newSrc = mobileNav.classList.contains('hidden') ? 'assets/hamburger-menu.svg' : 'assets/close-icon.svg';
+      
+                  // Change the src attribute value
+                  hamburgerIcon.setAttribute('src', newSrc);
               });
-            });
-        </script>
+          });
+      </script>
+      
     </body>
 </html>
