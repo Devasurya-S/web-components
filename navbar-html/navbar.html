@@ -18,6 +18,7 @@
               }
             }
         </script>
+        <link rel="stylesheet" href="navbar.css" />
     </head>
     <body class="min-h-screen p-8 bg-bodyBg">
 
@@ -43,7 +44,10 @@
                     <button class="bg-contactBtnBg rounded-full px-6 py-2 text-regular">Contact Us</button>
                 </div>
 
-                <img id="hamburger-icon" src="assets/hamburger-menu.svg" class="sm:hidden w-10 transition duration-500 ease-in-out"/>
+                <!-- <img id="hamburger-icon" src="assets/hamburger-menu.svg" class="sm:hidden w-10 transition duration-500 ease-in-out"/> -->
+                <div id="hamburger-icon" class="sm:hidden menu-btn">
+                  <div class="menu-btn__burger"></div>
+                </div>
          
         </div>
 
@@ -61,20 +65,36 @@
           document.addEventListener('DOMContentLoaded', function () {
               const hamburgerIcon = document.getElementById('hamburger-icon');
               const mobileNav = document.getElementById('mobile-nav');
-      
+              let mobileNavOpen = true;
+
               hamburgerIcon.addEventListener('click', function () {
-                  mobileNav.classList.toggle('hidden');
-      
-                  // Get the current src attribute value
-                  const currentSrc = hamburgerIcon.getAttribute('src');
-      
-                  // Define the new src attribute value based on the visibility of mobile navigation
-                  const newSrc = mobileNav.classList.contains('hidden') ? 'assets/hamburger-menu.svg' : 'assets/close-icon.svg';
-      
-                  // Change the src attribute value
-                  hamburgerIcon.setAttribute('src', newSrc);
+                  // mobileNav.classList.toggle('hidden');
+                  if(!mobileNavOpen) {
+                    mobileNav.classList.add('hidden');
+                    mobileNavOpen = true;
+                  } else {
+                    mobileNav.classList.remove('hidden');
+                    mobileNavOpen = false;
+                  }
               });
+
+              const menuBtn = document.querySelector('.menu-btn');
+            let menuOpen = false;
+            menuBtn.addEventListener('click', () => {
+              if(!menuOpen) {
+                menuBtn.classList.add('open');
+                menuOpen = true;
+              } else {
+                menuBtn.classList.remove('open');
+                menuOpen = false;
+              }
+            });
+
+            
           });
+
+
+
       </script>
       
     </body>
